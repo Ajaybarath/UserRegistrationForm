@@ -27,7 +27,7 @@
         <div>
             <label for="email">email input: </label>
             <input type="email" id="email" name="email">
-            <error-output class="text-error" for="email"></error-output>
+            <error-output class="email-error" for="email"></error-output>
         </div>
 
         <div>
@@ -76,6 +76,15 @@
             if (nameRegex.test(text.value))
                 textError.textContent = "";
             else textError.textContent = "Name is incorrect";
+        })
+
+        const email = document.querySelector('#email');
+        const emailError = document.querySelector('.email-error');
+        email.addEventListener('input', function() {
+            let nameRegex = RegExp("([a][b][c][.]?){1}([a-zA-Z]{3,})?[@]([b][l][.][c][o][.]?[i]?[n]?)")
+            if (nameRegex.test(email.value))
+                emailError.textContent = "";
+            else emailError.textContent = "email is incorrect";
         })
 
         const salary = document.querySelector('#salary');
