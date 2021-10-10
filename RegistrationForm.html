@@ -99,7 +99,7 @@
         const pwd = document.querySelector('#pwd');
         const pwdError = document.querySelector('.pwd-error');
         pwd.addEventListener('input', function() {
-            let nameRegex = RegExp("^(.{8,})*$")
+            let nameRegex = RegExp("^(.{8,})*((?=.*[A-Z]).+)*((?=.*\\\\d).+)*((?=.*[.,:;\\\\'!@#$%^&*_+=|(){}]).+)$")
             if (nameRegex.test(pwd.value))
                 pwdError.textContent = "";
             else pwdError.textContent = "pwd is incorrect";
